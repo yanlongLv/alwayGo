@@ -5,7 +5,6 @@ import (
 	"os"
 	"path"
 
-	"github.com/alwayGo/tools/pkg"
 	"github.com/urfave/cli/v2"
 )
 
@@ -38,7 +37,7 @@ func newProject(ctx *cli.Context) error {
 	projectName := ctx.Args().Slice()[0]
 	pwd, _ := os.Getwd()
 	projectfile := path.Join(pwd, projectName)
-	return pkg.Create(projectfile, projectName)
+	return Create(projectfile, projectName)
 }
 
 func build(ctx *cli.Context) error {

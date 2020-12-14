@@ -1,8 +1,8 @@
-module github.com/alwayGo
+module github.com/alwayGo/tools
 
-go 1.14
+go 1.15
 
 require (
-	github.com/go-delve/delve v1.5.1 // indirect
-	github.com/urfave/cli/v2 v2.3.0 // indirect
+	github.com/gobuffalo/packr/v2 v2.8.1
+	github.com/urfave/cli/v2 v2.3.0
 )
