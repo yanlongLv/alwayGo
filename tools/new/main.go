@@ -1,9 +1,11 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"os"
 	"path"
+	"time"
 
 	"github.com/urfave/cli/v2"
 )
@@ -19,7 +21,7 @@ func main() {
 			Name:    "new",
 			Aliases: []string{"n"},
 			Usage:   "create new project and product new directory",
-			Action:  newProject,
+			Action:  create,
 		}, {
 			Name:    "build",
 			Aliases: []string{"b"},
@@ -33,11 +35,18 @@ func main() {
 	}
 }
 
-func newProject(ctx *cli.Context) error {
+func create(ctx *cli.Context) error {
 	projectName := ctx.Args().Slice()[0]
 	pwd, _ := os.Getwd()
 	projectfile := path.Join(pwd, projectName)
-	return Create(projectfile, projectName)
+	p := NewProject(pwd, projectfile, projectName)
+	ct, cancel := context.WithTimeout(context.Background(), time.Minute)
+	defer cancel()
+	if err := p.Generate(ct); err != nil {
+		return err
+	}
+	return nil
+	// return Create(projectfile, projectName)
 }
 
 func build(ctx *cli.Context) error {

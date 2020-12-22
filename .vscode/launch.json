@@ -10,7 +10,7 @@
             "request": "launch",
             "mode": "auto",
             "program": "${fileDirname}",
-            "env": {},
+            "env": {"GOPATH":"/Users/apple/go"},
             "args": []
         }
     ]

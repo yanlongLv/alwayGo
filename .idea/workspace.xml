@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d9f13e3a-de4a-4052-86a5-0373cfb0dbad" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/createfile.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/tools/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/tools/go.sum" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1m0KIh0Hu49mg4g7GWk1UMGv7WY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="tasks" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d9f13e3a-de4a-4052-86a5-0373cfb0dbad" name="Default Changelist" comment="" />
+      <created>1608624990936</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608624990936</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1213" y="401" key="#com.intellij.tools.ToolEditorDialog" timestamp="1608625111770">
+      <screen x="0" y="25" width="2560" height="1330" />
+    </state>
+    <state x="1213" y="401" key="#com.intellij.tools.ToolEditorDialog/0.25.2560.1330@0.25.2560.1330" timestamp="1608625111770" />
+    <state x="855" y="150" key="SettingsEditor" timestamp="1608625133093">
+      <screen x="0" y="25" width="2560" height="1330" />
+    </state>
+    <state x="855" y="150" key="SettingsEditor/0.25.2560.1330@0.25.2560.1330" timestamp="1608625133093" />
+  </component>
+</project>
