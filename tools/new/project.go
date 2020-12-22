@@ -19,6 +19,7 @@ type project struct {
 	projectName string
 }
 
+// NewProject is new project
 func NewProject(dir, fileName, projectName string) *project {
 	return &project{dir, fileName, projectName}
 }

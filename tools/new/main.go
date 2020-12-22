@@ -10,7 +10,6 @@ import (
 	"github.com/urfave/cli/v2"
 )
 
-// /Users/yanlonglv/go/bin/packr2
 func main() {
 	app := cli.NewApp()
 	app.Name = "create new project"
@@ -46,7 +45,6 @@ func create(ctx *cli.Context) error {
 		return err
 	}
 	return nil
-	// return Create(projectfile, projectName)
 }
 
 func build(ctx *cli.Context) error {
