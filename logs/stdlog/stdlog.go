@@ -2,13 +2,18 @@ package stdlog
 
 import (
 	"bytes"
+	"fmt"
 	"io"
 	"log"
 	"os"
+	"runtime"
+	"strings"
 	"sync"
+
+	"github.com/alwayGo/logs"
 )
 
-var _ log.Logger = (*stdLogger)(nil)
+var _ logs.Logger = (*stdLogger)(nil)
 
 type options struct {
 	prefix string
@@ -48,14 +53,13 @@ type stdLogger struct {
 }
 
 //NewLogger ..
-func NewLogger(opts ...Option) *stdLogger {
+func NewLogger(opts ...Option) logs.Logger {
 	options := options{
 		flag: log.LstdFlags,
 		skip: 2,
 		out:  os.Stdout,
 	}
 	for _, o := range opts {
-
 		o(&options)
 	}
 	return &stdLogger{
@@ -67,4 +71,31 @@ func NewLogger(opts ...Option) *stdLogger {
 			},
 		},
 	}
+}
+
+func stackTrace(path string) string {
+	idx := strings.LastIndexByte(path, '/')
+	if idx == -1 {
+		return path
+	}
+	return path[idx+1:]
+}
+
+func (s *stdLogger) Print(kvpair ...interface{}) {
+	if len(kvpair) == 0 {
+		return
+	}
+	if len(kvpair)%2 != 0 {
+		kvpair = append(kvpair, "")
+	}
+	buf := s.pool.Get().(*bytes.Buffer)
+	if _, file, line, ok := runtime.Caller(s.opts.skip); ok {
+		buf.WriteString(fmt.Sprintf("source=%s:%d", stackTrace(file), line))
+	}
+	for i := 0; i < len(kvpair); i += 2 {
+		fmt.Fprintf(buf, "%s=%s", kvpair[i], kvpair[i+1])
+	}
+	s.log.Println(buf.String())
+	buf.Reset()
+	s.pool.Put(buf)
 }

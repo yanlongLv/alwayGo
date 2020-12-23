@@ -26,7 +26,7 @@ func Debug(l Logger) Logger {
 
 //Info ..
 func Info(l Logger) Logger {
-	return With(l, LevelKey, levelInfo)
+	return With(l, LevelKey, LevelInfo)
 }
 
 //Warn ..
