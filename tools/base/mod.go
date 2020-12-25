@@ -6,11 +6,11 @@ import (
 	"golang.org/x/mod/modfile"
 )
 
+// ModulePath ..
 func ModulePath(filename string) (string, error) {
 	modBytes, err := ioutil.ReadFile(filename)
 	if err != nil {
 		return "", err
 	}
 	return modfile.ModulePath(modBytes), nil
-
 }
